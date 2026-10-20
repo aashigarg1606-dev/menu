@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ABESphere</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <h1>ABESphere</h1>
+
+        <p>Your Academic Community</p>
+
+    </header>
+
+
+    <!-- WELCOME -->
+
+    <section class="welcome">
+
+        <h2>Everything you need, all in one place.</h2>
+
+        <p>
+            Study smarter, clear your doubts, explore solutions
+            and prepare for your exams with ABESphere.
+        </p>
+
+    </section>
+
+
+    <!-- STUDENT LOGIN -->
+
+    <section class="login">
+
+    <h2>Student Login</h2>
+
+    <input
+        type="text"
+        id="studentId"
+        placeholder="Enter your Student ID"
+    >
+
+    <button onclick="studentLogin()">
+        LOGIN
+    </button>
+
+</section>
+
+
+    <!-- EXAM COUNTDOWN -->
+
+    <section class="countdown">
+
+        <h2>⏳ EXAM COUNTDOWN</h2>
+
+        <p>MT-1 starts in</p>
+
+        <h3 id="countdown">Loading...</h3>
+
+    </section>
+
+
+    <!-- PYQ LIBRARY -->
+
+    <section class="pyq-section">
+
+        <h2>📚 PYQ LIBRARY</h2>
+
+        <p>
+            Find previous-year questions and study materials
+            for your subjects.
+        </p>
+
+        <input
+            type="text"
+            id="pyqSearch"
+            placeholder="🔎 Search for a subject or paper..."
+        >
+
+        <div class="pyq-subjects">
+
+            <button onclick="showPYQ('DC Circuits')">
+                ⚡ DC CIRCUITS
+            </button>
+
+            <button onclick="showPYQ('Mathematics')">
+                📐 MATHEMATICS
+            </button>
+
+            <button onclick="showPYQ('Programming')">
+                💻 PROGRAMMING
+            </button>
+
+            <button onclick="showPYQ('Physics')">
+                🔬 PHYSICS
+            </button>
+
+        </div>
+
+        <div id="pyq-results" class="pyq-results">
+
+            <p>
+                Select a subject above to view available PYQs.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- DOUBT HUB -->
+
+    <section class="doubt-section">
+
+        <h2>🧠 DOUBT HUB</h2>
+
+        <p>
+            Ask questions, share doubts and learn together.
+        </p>
+
+
+        <h3>Choose a Subject</h3>
+
+
+        <div class="doubt-subjects">
+
+            <button onclick="selectSubject('Physics')">
+                🔬 PHYSICS
+            </button>
+
+            <button onclick="selectSubject('Mathematics')">
+                📐 MATHEMATICS
+            </button>
+
+            <button onclick="selectSubject('Programming')">
+                💻 PROGRAMMING
+            </button>
+
+        </div>
+
+
+        <div class="doubt-form">
+
+            <input
+                type="text"
+                id="doubtTitle"
+                placeholder="What is your doubt?"
+            >
+
+            <textarea
+                id="doubtDescription"
+                placeholder="Explain your question here..."
+            ></textarea>
+
+            <button onclick="postDoubt()">
+                POST DOUBT
+            </button>
+
+        </div>
+
+
+        <div id="doubt-results">
+
+            <h3>Recent Doubts</h3>
+
+        </div>
+
+    </section>
+
+
+    <!-- VIDEO SOLUTIONS -->
+
+    <section class="video-section">
+
+        <h2>🎥 VIDEO SOLUTIONS</h2>
+
+        <p>
+            Learn from step-by-step video explanations
+            by students and faculty.
+        </p>
+
+
+        <div class="video-subjects">
+
+            <button onclick="showVideos('Physics')">
+                🔬 PHYSICS
+            </button>
+
+            <button onclick="showVideos('Mathematics')">
+                📐 MATHEMATICS
+            </button>
+
+            <button onclick="showVideos('Programming')">
+                💻 PROGRAMMING
+            </button>
+
+        </div>
+
+
+        <div id="video-results">
+
+            <p>
+                Select a subject to explore video solutions.
+            </p>
+
+        </div>
+
+    </section>
+   <!-- STUDENT PROFILE -->
+
+<section class="profile">
+
+    <h2>👤 STUDENT PROFILE</h2>
+
+    <div class="profile-card">
+
+        <div class="profile-icon">
+            👨‍🎓
+        </div>
+
+        <h3>ABES Student</h3>
+
+        <p>Student ID:<strong id="profileStudentId">Not entered</strong>
+        </p>
+
+        <p>Course: <strong>B.Tech AIML</strong></p>
+
+        <button onclick="editProfile()">
+            EDIT PROFILE
+        </button>
+
+    </div>
+
+</section>
+
+
+    <!-- STUDENT DASHBOARD -->
+
+<section class="dashboard">
+
+    <h2>👋 STUDENT DASHBOARD</h2>
+
+    <p>Welcome to your ABESphere study space.</p>
+
+    <div class="dashboard-cards">
+
+        <div class="dashboard-card">
+            <h3>📚 PYQs</h3>
+            <p>Access previous-year questions.</p>
+        </div>
+
+        <div class="dashboard-card">
+            <h3>🧠 Doubts</h3>
+            <p>Ask and solve academic doubts.</p>
+        </div>
+
+        <div class="dashboard-card">
+            <h3>🎥 Videos</h3>
+            <p>Learn through video solutions.</p>
+        </div>
+
+        <div class="dashboard-card">
+            <h3>📝 Exam Mode</h3>
+            <p>Prepare for your upcoming exams.</p>
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- EXAM MODE -->
+
+    <section class="exam-mode">
+
+        <h2>📝 EXAM MODE</h2>
+
+        <p>
+            Enter exam mode and focus on your preparation.
+        </p>
+
+
+        <div class="exam-info">
+
+            <h3>🎯 Focus Mode</h3>
+
+            <p>
+                Minimize distractions and concentrate
+                on your upcoming examination.
+            </p>
+
+        </div>
+
+
+        <div class="exam-options">
+
+            <button onclick="startExamMode()">
+                🚀 START EXAM MODE
+            </button>
+
+        </div>
+
+
+        <div id="exam-message"></div>
+
+    </section>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
